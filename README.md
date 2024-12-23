@@ -1,28 +1,26 @@
-//backend      <-- Node.js + Express backend
-//frontend     <-- React frontend
+# Backend -Node.js + Express.js
+# Frontend-React.js
 
-Setup
-Clone the Repository:
-git clone https://github.com/Imasha9/Book.git
-Install Dependencies:
-For the backend:
+## Setup
+# 1.Clone the Repository:
+   git clone https://github.com/Imasha9/Book.git
+   
+# 2.Install Dependencies:
+-For the backend:
   cd backend
   npm install
-For the frontend:
+-For the frontend:
   cd frontend
   npm install
-Configure Environment Variables:
-Create a .env file in the backend directory and add your MongoDB connection string and other necessary environment variables.
-Install Dependencies:
-
-Start the backend server:
+  
+ # 3.Start the backend server:
   cd backend
   npm start
-In a separate terminal, start the frontend server:
+ # 4.In a separate terminal, start the frontend server:
   cd frontend
   npm start
 
-implemented features
+## Implemented features
  -CRUD operations for BookReview
  -Search Functionality
  -Filter option
