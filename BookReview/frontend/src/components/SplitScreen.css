@@ -1,0 +1,480 @@
+/* Prevent horizontal scrolling */
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Flex container for split view */
+.split-container {
+    display: flex;
+    height: 100vh;
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+/* Left section for the split container */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 0 60%; /* Adjust as needed */
+  }
+  
+
+/* Right section for the split container */
+.right-section {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    overflow-y: auto; /* Vertical scrolling only */
+    border-left: 1px solid #1dc468;
+    align-items: flex-start;
+    display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 20px; /* Adds space between cards */
+  flex: 0 0 60%; /* Adjust as needed */
+}
+
+/* Table styling */
+.table th,
+.table td {
+    border: 1px solid white;
+}
+
+/* Star rating */
+.star {
+    color: gold;
+}
+
+.star.editable {
+    cursor: pointer;
+}
+
+/* Review card layout */
+.review-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .review-item {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-color: yellow;
+  }
+/* Individual card styling */
+
+
+
+/* Card styling */
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    justify-content: center;
+    border: 2px solid white; 
+    
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: yellow;
+}
+
+/* Card body content alignment */
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border-color: yellow;
+}
+
+/* Card title, subtitle, and text styling */
+.card-title, .card-subtitle, .card-rating, .card-text, .card-date {
+    margin: 8px 0;
+    border-color: yellow;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #333;
+    border-color: yellow;
+}
+
+.card-date {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+
+
+.star {
+    color: gold;
+    margin-right: 2px;
+}
+
+.star.editable:hover {
+    cursor: pointer;
+}
+
+/* Grid layout for the cards in the container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    padding: 20px;
+    width: 100%; 
+    box-sizing: border-box;
+    overflow-x: hidden; 
+}
+
+/* Header styling */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: 60%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #4a90e2;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sign-in-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.join-us-btn {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.join-us-btn:hover {
+    background-color: #357ab8;
+}
+.modal.show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .modal-dialog {
+    max-width: 500px;
+    width: 100%;
+  }
+.update-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none; 
+    z-index: 999;
+  }
+  
+  .update-form.show {
+    display: block;
+  }
+  
+  .update-form .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .update-form .form-control {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .update-form .modal-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .update-form button {
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .update-form button.close-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+  }
+  
+  .update-form button.save-btn {
+    background-color: #007bff;
+    color: white;
+  }
+  
+.delete-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none; 
+    z-index: 999;
+  }
+  
+  .delete-modal.show {
+    display: block;
+  }
+  
+  .delete-modal .modal-header {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .delete-modal .modal-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .delete-modal button {
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .delete-modal button.cancel-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+  }
+  
+  .delete-modal button.confirm-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+    max-width: 400px; 
+    border-radius: 8px; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.sticky-header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sticky-header input {
+    width: 200px;
+    border-radius: 20px;
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+  }
+  
+  .sticky-header button {
+    margin-left: 20px;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 10px;
+  }
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+  }
+  .action-buttons {
+    display: flex;
+    gap: 10px; 
+    justify-content: flex-end; 
+  }
+  
+  .action-buttons button {
+    padding: 5px 10px; 
+    font-size: 16px; 
+  }
+   
+  .action-buttons .edit-icon {
+    color: green; 
+  }
+  
+  .action-buttons .delete-icon {
+    color: red; 
+  }
+  
+  .action-buttons button {
+    padding: 5px 10px; 
+    font-size: 16px; 
+  }
+  @media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; 
+    }
+}
+.left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .review-box {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 2px solid #e7e95e; 
+    padding: 20px;
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    width: 600px; 
+    height: 200px; 
+    box-shadow: 0 4px 8px rgba(182, 224, 103, 0.1); 
+    transition: border-color 0.3s ease; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
+    border-radius: 10px;
+}
+
+.review-box p {
+    margin: 0; 
+    font-weight: bold;
+    
+    font-size: 50px;
+    color: #333; 
+    text-align: center; 
+}
+
+.left-description {
+   
+    text-align: center;
+    font-size: 22px;
+    
+    color:black;
+    line-height: 1.5;
+    max-width: 5000px;
+    margin-left: 20px; 
+    word-wrap: break-word; 
+}
+.review-box2 {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    font-size: 22px;
+    font-family: 'Arial', sans-serif;
+    width: 1000px; 
+    height: 400px; 
+    box-shadow: 0 4px 8px rgba(182, 224, 103, 0.1); 
+    transition: border-color 0.3s ease; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    overflow: hidden; 
+    
+}
