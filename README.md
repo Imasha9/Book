@@ -32,8 +32,12 @@
 
 # Implemented features
  -CRUD operations for BookReview  
- 
  -Search Functionality  
  
  -Filter option  
+
+ ![1](https://github.com/user-attachments/assets/dd5444ee-2fdd-4af3-9917-4d75cb6a8094)
+![2](https://github.com/user-attachments/assets/c9d6682f-3bad-4edb-b872-7d17e208bb28)
+
+ 
  
